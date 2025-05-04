@@ -1,0 +1,28 @@
+// function initialize() {
+    //     InputDelegate.initialize();
+    // }
+
+    // function onMenu() as Boolean {
+    //     WatchUi.pushView(new Rez.Menus.MainMenu(), new NurseMenuDelegate(), WatchUi.SLIDE_UP);
+    //     return true;
+    // }
+    
+
+    // // Called when a key is pressed (useful for hardware buttons)
+    // function onKey(key) as Boolean {
+    //     // Handle back button or other key events if needed
+    //     return false;
+    // }
+
+
+
+    // // Called when the user swipes the screen
+    // function onSwipe(direction) as Boolean {
+    //     // Not using swipe yet — return false
+    //     return false;
+    // }
+
+    // function onTap(event as WatchUi.ClickEvent) as Boolean {
+    //     System.println("onTap triggered!");
+    //     return true;
+    // }

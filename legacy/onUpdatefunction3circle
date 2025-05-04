@@ -1,0 +1,65 @@
+function onUpdate(dc as Graphics.Dc) as Void {
+    dc.clear();
+
+    // Get screen dimensions
+    var width = dc.getWidth();
+    var height = dc.getHeight();
+
+    // Set common text properties
+    dc.setColor(Graphics.COLOR_WHITE, Graphics.COLOR_TRANSPARENT);
+
+    // --- BUTTON POSITIONS ---
+    var centerY = height / 2;
+    var radius = 40;
+
+    var buttonSpacing = width / 4;
+
+    var tiredX = buttonSpacing * 1;
+    var stressedX = buttonSpacing * 2;
+    var neutralX = buttonSpacing * 3;
+
+    // --- TIRED BUTTON ---
+    dc.setColor(Graphics.COLOR_YELLOW, Graphics.COLOR_TRANSPARENT);
+    dc.fillCircle(tiredX, centerY, radius);
+    dc.drawText(tiredX, centerY, Graphics.FONT_MEDIUM, "", Graphics.TEXT_JUSTIFY_CENTER);
+
+    // --- STRESSED BUTTON ---
+    dc.setColor(Graphics.COLOR_RED, Graphics.COLOR_TRANSPARENT);
+    dc.fillCircle(stressedX, centerY, radius);
+    dc.drawText(stressedX, centerY, Graphics.FONT_MEDIUM, "", Graphics.TEXT_JUSTIFY_CENTER);
+
+    // --- NEUTRAL BUTTON ---
+    dc.setColor(Graphics.COLOR_GREEN, Graphics.COLOR_TRANSPARENT);
+    dc.fillCircle(neutralX, centerY, radius);
+    dc.drawText(neutralX, centerY, Graphics.FONT_MEDIUM, "", Graphics.TEXT_JUSTIFY_CENTER);
+    
+    _buttonCenters = {
+    "Tired" => { :x => tiredX, :y => centerY },
+    "Stressed" => { :x => stressedX, :y => centerY },
+    "Neutral" => { :x => neutralX, :y => centerY }
+    };
+}
+
+
+
+// function onTap(event as WatchUi.ClickEvent) as Boolean {
+    //     var coords = event.getCoordinates(); // returns [x, y]
+    //     var x = coords[0];
+    //     var y = coords[1];
+
+    //     var view = getApp().getView() as NurseView;
+    //     var centers = view._buttonCenters;
+    //     var radius = view._buttonRadius;
+
+    //     var keys = centers.keys();
+    //     for (var i = 0; i < keys.size(); i += 1) {
+    //         var mood = keys[i];
+    //         var center = centers[mood] as Dictionary;
+    //         if (view._isTapInside(x, y, center[:x], center[:y], radius)) {
+    //             view._logMood(mood);
+    //             break;
+    //         }
+    //     }
+
+    //     return true;
+    // }

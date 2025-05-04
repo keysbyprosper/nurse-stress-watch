@@ -1,0 +1,6 @@
+bin/
+*.mir
+*.iq
+*.o
+*.log
+build/
