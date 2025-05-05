@@ -15,7 +15,7 @@ class NurseApp extends Application.AppBase {
         // Add initialization logic if needed
     }
 
-    // Called when application is exiting
+    // Called when application is exiting on stop
     function onStop(state as Dictionary?) as Void {
         // Add cleanup logic if needed
     }
