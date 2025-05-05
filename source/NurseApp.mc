@@ -25,7 +25,7 @@ class NurseApp extends Application.AppBase {
         return _view;
     }
 
-    // Returns the initial view of the application
+    // Returns the initial view of the application first
     function getInitialView() as [Views] or [Views, InputDelegates] {
         _view = new NurseView();
         return [_view, new NurseDelegate(_view)];
