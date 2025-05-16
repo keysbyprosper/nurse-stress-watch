@@ -10,8 +10,6 @@ class NurseView extends WatchUi.View {
     var _buttonCenters = {};  // Will hold x/y for each button
     var _screenHeight;
 
-
-
     function initialize() {
         View.initialize();
     }
@@ -61,7 +59,6 @@ class NurseView extends WatchUi.View {
         for (var y = topY; y < topY + height; y += 1) {
             dc.drawLine(0, y, width, y);
         }
-
         // Draw the mood label
         dc.setColor(textColor, bgColor);
         dc.drawText(width / 2, topY + height / 2, Graphics.FONT_LARGE, label, Graphics.TEXT_JUSTIFY_CENTER);
@@ -78,9 +75,6 @@ class NurseView extends WatchUi.View {
         Storage.setValue("moodLog", log);
     }
 }
-
-
-
     // Called when this View is removed from the screen. Save the
     // state of this View here. This includes freeing resources from
     // memory.
