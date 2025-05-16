@@ -51,7 +51,11 @@ class NurseDelegate extends WatchUi.InputDelegate {
         } else if (y < sectionHeight * 2) {
             // Stressed - go to second screen, don't log here
             System.println("Tapped mood: Stressed");
-            WatchUi.pushView(new StressLevelView(), new StressLevelDelegate(), WatchUi.SLIDE_UP);
+            var stressView = new StressLevelView();
+            var stressDelegate = new StressLevelDelegate();
+            stressDelegate.setView(stressView);
+            WatchUi.pushView(stressView, stressDelegate, WatchUi.SLIDE_UP);
+
 
         } else {
             _view._logMood("Neutral");
