@@ -19,9 +19,6 @@ class NurseView extends WatchUi.View {
         setLayout(Rez.Layouts.MainLayout(dc));
     }
 
-    // Called when this View is brought to the foreground. Restore
-    // the state of this View and prepare it to be shown. This includes
-    // loading resources into memory.
     function onShow() as Void {
     }
 
@@ -63,7 +60,7 @@ class NurseView extends WatchUi.View {
         dc.setColor(textColor, bgColor);
         dc.drawText(width / 2, topY + height / 2, Graphics.FONT_LARGE, label, Graphics.TEXT_JUSTIFY_CENTER);
     }
-
+    
     function _logMood(mood as String) {
         var timestamp = Time.now().value();
         System.println("Mood: " + mood + " at " + timestamp);

@@ -40,23 +40,25 @@ class NurseDelegate extends WatchUi.InputDelegate {
     }
 
     function onTap(event as WatchUi.ClickEvent) as Boolean {
-        var coords = event.getCoordinates(); // returns [x, y]
+        var coords = event.getCoordinates(); // [x, y]
         var y = coords[1];
         var screenHeight = _view.getScreenHeight();
         var sectionHeight = screenHeight / 3;
 
-        var mood = "";
         if (y < sectionHeight) {
-            mood = "Tired";
+            _view._logMood("Tired");
+            System.println("Tapped mood: Tired");
         } else if (y < sectionHeight * 2) {
-            mood = "Stressed";
-        } else {
-            mood = "Neutral";
-        }
+            // Stressed - go to second screen, don't log here
+            System.println("Tapped mood: Stressed");
+            WatchUi.pushView(new StressLevelView(), new StressLevelDelegate(), WatchUi.SLIDE_UP);
 
-        _view._logMood(mood);
-        System.println("Tapped mood: " + mood);
+        } else {
+            _view._logMood("Neutral");
+            System.println("Tapped mood: Neutral");
+        }
 
         return true;
     }
+
 }
